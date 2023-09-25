@@ -34,8 +34,9 @@ class ProductFactory extends Factory
             'final_price' => fake()->randomElement([69000, 89000, 119000, 134000, 159000, 189000, 229000, 279000, 339000, 459000, 659000, 779000, 849000]),
             'dealer_price' => fake()->randomElement([49000, 69000, 89000, 119000, 129000, 149000, 189000, 229000, 189000, 419000, 619000, 729000, 749000]),
             'discount' => fake()->randomElement([null, 25]),
+            'discount_min_quantity' => mt_rand(0, 5),
             'stock' => mt_rand(0, 1000),
-            'status' => fake()->randomElement(['published', 'scheduled'])
+            'status' => fake()->randomElement(['published', 'scheduled', 'deleted'])
         ];
     }
 }

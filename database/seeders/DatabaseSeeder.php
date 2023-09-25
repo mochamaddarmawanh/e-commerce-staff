@@ -158,10 +158,12 @@ class DatabaseSeeder extends Seeder
             ],
         ]);
 
-        DB::table('discount_threshold')->insert([
+        DB::table('discount_min_purchases')->insert([
             [
                 'amount_threshold' => 500000,
-                'discount_percentage' => 25
+                'discount_percentage' => 25,
+                'created_at' => now(),
+                'updated_at' => now()
             ],
         ]);
 

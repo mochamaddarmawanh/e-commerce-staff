@@ -35,7 +35,7 @@
         <div class="card-body">
             <div class="table-responsive">
                 <table id="product_table"
-                    class="table table-bordered table-hover text-nowrap"
+                    class="table table-bordered table-hover"
                     style="width:100%">
                     <thead>
                         <tr>
@@ -62,7 +62,7 @@
                     <tbody>
                         @foreach ($datas as $product)
                             <tr>
-                                <td style="white-space: normal;">
+                                <td>
                                     <div class="form-check">
                                         <input class="form-check-input border border-2 me-3"
                                             type="checkbox"
@@ -76,7 +76,7 @@
                                         </label>
                                     </div>
                                 </td>
-                                <td style="white-space: normal;">{{ $product->name }}</td>
+                                <td>{{ $product->name }}</td>
                                 <td>{{ $product->category->name }}</td>
                                 <td>{{ $product->brand->name }}</td>
                                 <td>

@@ -241,7 +241,9 @@ class ProductController extends Controller
             return redirect()->back()->with('error', 'Product with code <strong>' . $old_code . '</strong> not found.');
         }
 
-        Product::destroy($product->id);
+        // Product::destroy($product->id);
+        $product->update(['status' => 'deleted']);
+
         return back()->with('success', 'Product with code <strong>' . $old_code . '</strong> has been deleted successfully!');
     }
 
@@ -256,7 +258,8 @@ class ProductController extends Controller
             $product = Product::find($productId);
 
             if ($product) {
-                $product->delete();
+                // $product->delete();
+                $product->update(['status' => 'deleted']);
             }
         }
 

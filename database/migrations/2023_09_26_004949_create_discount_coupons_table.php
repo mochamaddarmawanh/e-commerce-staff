@@ -11,11 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('discount_threshold', function (Blueprint $table) {
+        Schema::create('discount_coupons', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('amount_threshold');
-            $table->unsignedInteger('discount_percentage');
+            $table->string('code', 10)->unique();
+            $table->string('name')->unique();
+            $table->unsignedInteger('percentage');
+            $table->unsignedInteger('min_purchase_amount');
+            $table->unsignedInteger('usage_limit');
             $table->boolean('active')->default(true);
+            $table->enum('status', ['active', 'inactive']);
             $table->timestamps();
         });
     }
@@ -25,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('discount_threshold');
+        Schema::dropIfExists('discount_coupons');
     }
 };

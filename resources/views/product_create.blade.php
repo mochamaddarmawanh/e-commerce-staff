@@ -171,7 +171,7 @@
                                         style="margin-bottom: -5px">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="col-xl-12 mb-3">
+                            <div class="col-xl-4 mb-3">
                                 <label for="final_price"
                                     class="form-label">Enter Cost</label>
                                 <input type="number"
@@ -188,6 +188,40 @@
                                 <label for="final_price"
                                     class="form-label mt-1 fs-12 op-5 text-muted mb-0">*Mention final price of the
                                     product (e.g., 65000)</label>
+                            </div>
+                            <div class="col-xl-4 mb-3">
+                                <label for="discount"
+                                    class="form-label">Discount</label>
+                                <input type="number"
+                                    class="form-control @error('discount') is-invalid @enderror"
+                                    id="discount"
+                                    name="discount"
+                                    placeholder="Enter discount here"
+                                    min="0"
+                                    value="{{ old('discount') }}">
+                                @error('discount')
+                                    <div class="invalid-feedback"
+                                        style="margin-bottom: -5px">{{ $message }}</div>
+                                @enderror
+                                <label for="description"
+                                    class="form-label mt-1 fs-12 op-5 text-muted mb-0">*e.g., 25.</label>
+                            </div>
+                            <div class="col-xl-4 mb-3">
+                                <label for="discount_min_quantity"
+                                    class="form-label">Discount Min Quantity</label>
+                                <input type="number"
+                                    class="form-control @error('discount_min_quantity') is-invalid @enderror"
+                                    id="discount_min_quantity"
+                                    name="discount_min_quantity"
+                                    placeholder="Enter discount minimum quantity here"
+                                    min="0"
+                                    value="{{ old('discount_min_quantity') }}">
+                                @error('discount_min_quantity')
+                                    <div class="invalid-feedback"
+                                        style="margin-bottom: -5px">{{ $message }}</div>
+                                @enderror
+                                <label for="description"
+                                    class="form-label mt-1 fs-12 op-5 text-muted mb-0">*e.g., 3.</label>
                             </div>
                             <div class="col-xl-12 mb-4">
                                 <label for="description"
@@ -210,7 +244,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="row">
-                            <div class="col-xl mb-3">
+                            <div class="col-xl-4 mb-3">
                                 <label for="actual_price"
                                     class="form-label">Actual Price</label>
                                 <input type="number"
@@ -228,7 +262,7 @@
                                     class="form-label mt-1 fs-12 op-5 text-muted mb-0">*e.g.,
                                     30000.</label>
                             </div>
-                            <div class="col-xl-3 mb-3">
+                            <div class="col-xl-4 mb-3">
                                 <label for="dealer_price"
                                     class="form-label">Dealer Price</label>
                                 <input type="number"
@@ -246,24 +280,7 @@
                                     class="form-label mt-1 fs-12 op-5 text-muted mb-0">*e.g.,
                                     40000.</label>
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="discount"
-                                    class="form-label">Discount</label>
-                                <input type="number"
-                                    class="form-control @error('discount') is-invalid @enderror"
-                                    id="discount"
-                                    name="discount"
-                                    placeholder="Enter discount in % here"
-                                    min="0"
-                                    value="{{ old('discount') }}">
-                                @error('discount')
-                                    <div class="invalid-feedback"
-                                        style="margin-bottom: -5px">{{ $message }}</div>
-                                @enderror
-                                <label for="description"
-                                    class="form-label mt-1 fs-12 op-5 text-muted mb-0">*e.g., 25.</label>
-                            </div>
-                            <div class="col-xl-3 mb-3">
+                            <div class="col-xl-4 mb-3">
                                 <label for="weight"
                                     class="form-label">Item Weight</label>
                                 <input type="number"

@@ -28,8 +28,9 @@ return new class extends Migration
             $table->unsignedInteger('final_price');
             $table->unsignedInteger('dealer_price');
             $table->unsignedInteger('discount')->nullable();
+            $table->unsignedInteger('discount_min_quantity');
             $table->unsignedInteger('stock');
-            $table->enum('status', ['published', 'scheduled']);
+            $table->enum('status', ['published', 'scheduled', 'deleted']);
             $table->timestamps();
         });
     }
